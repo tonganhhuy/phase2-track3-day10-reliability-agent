@@ -15,6 +15,9 @@ def main() -> None:
     metrics = run_simulation(config, load_queries())
     metrics.write_json(args.out)
     print(f"wrote {args.out}")
+    csv_out = args.out.replace(".json", ".csv")
+    metrics.write_csv(csv_out)
+    print(f"wrote {csv_out}")
 
 
 if __name__ == "__main__":
